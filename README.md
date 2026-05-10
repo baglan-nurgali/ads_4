@@ -29,4 +29,4 @@ The experiments show that as the number of vertices and edges increases, the exe
 
 Reflection
 Through this assignment, I gained a deeper understanding of how graph representations affect algorithm efficiency. Implementing both BFS and DFS highlighted the importance of choosing the right data structures for specific tasks. One of the primary challenges was obtaining consistent timing results, which was successfully resolved by implementing a warm-up routine to stabilize the JVM performance before recording final data.
-![screenshots/1.png]()
+![](screenshots/1.png)
