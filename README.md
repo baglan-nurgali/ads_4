@@ -1,4 +1,4 @@
-Project Overview
+
 This project involves the implementation of a graph data structure and the application of two fundamental traversal algorithms: Breadth-First Search (BFS) and Depth-First Search (DFS). A graph consists of vertices, which represent individual nodes, and edges, which represent the connections between these nodes. In this system, the graph is represented using an adjacency list, which is an efficient way to store connections by maintaining a list of neighbors for each vertex.
 
 Class Descriptions
