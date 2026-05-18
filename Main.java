@@ -6,6 +6,6 @@ public class Main {
         experiment.warmup();
 
         System.out.println("Starting experiments...");
-        experiment.runMultipleTests(); // [cite: 49, 74]
+        experiment.runMultipleTests(); 
     }
 }
