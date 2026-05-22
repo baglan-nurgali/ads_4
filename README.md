@@ -1,32 +1,28 @@
-
-This project involves the implementation of a graph data structure and the application of two fundamental traversal algorithms: Breadth-First Search (BFS) and Depth-First Search (DFS). A graph consists of vertices, which represent individual nodes, and edges, which represent the connections between these nodes. In this system, the graph is represented using an adjacency list, which is an efficient way to store connections by maintaining a list of neighbors for each vertex.
+Project Overview
+This project focuses on the implementation of a weighted graph data structure and the application of Dijkstra's algorithm to find the shortest paths. A graph in this system consists of vertices and weighted edges, represented through an adjacency list. This structure is designed to model networks where connections have specific costs or distances.
 
 Class Descriptions
-The system is built using an object-oriented approach with the following classes:
+The implementation is built using an object-oriented approach with the following key components:
+Vertex: Represents a node in the graph with a unique integer identifier.
+Edge: Represents a connection between two vertices. Unlike standard edges, this class includes a weight field to store the cost of the connection.
+Graph: The core class that manages the adjacency list. It includes methods for adding vertices and creating weighted edges between them.
+Main: The entry point of the application used to demonstrate the shortest path calculations.
 
-Vertex: Represents a node in the graph with a unique identifier.
-
-Edge: Manages the connection between a source vertex and a destination vertex.
-
-Graph: The core class that stores the adjacency list and implements the logic for adding vertices, edges, and performing traversals.
-
-Experiment: A utility class designed to automate testing, generate random graphs, and measure execution time.
-
-Main: The entry point of the application that orchestrates the experimental flow.
-
-Algorithm Descriptions
-Breadth-First Search (BFS)
-BFS starts at a selected node and explores all of its neighboring nodes at the present depth level before moving on to the nodes at the next depth level. It uses a queue data structure to track the nodes that need to be visited. This algorithm is particularly useful for finding the shortest path in unweighted graphs. The time complexity for BFS is O(V + E).
-
-Depth-First Search (DFS)
-DFS starts at a selected node and explores as far as possible along each branch before backtracking. It is implemented using recursion, which utilizes the call stack. DFS is commonly used for topological sorting and finding connected components. The time complexity for DFS is also O(V + E).
-
+Dijkstra Algorithm Implementation
+The primary focus of this implementation is Dijkstra's algorithm. This algorithm computes the shortest distance from a single source vertex to all other reachable vertices in a weighted graph.
+The logic follows a greedy approach:
+Initializing all distances from the source as infinity, except for the source itself, which is set to zero.
+Repeatedly selecting the unvisited vertex with the smallest current distance.
+Updating the distances of all adjacent neighbors if a shorter path is found through the selected vertex.
+Marking the vertex as visited to ensure each node is processed efficiently.
+As per the project requirements, the implementation utilizes simple loops and arrays/maps for distance tracking instead of a priority queue, ensuring clear and maintainable logic.
 Experimental Results
-To ensure the accuracy of the performance measurements, the system includes a warm-up phase. During this phase, several traversal cycles are executed to allow the Java Virtual Machine (JVM) and Just-In-Time (JIT) compiler to optimize the code. Without this warm-up, the first test (small graph) often appears slower than larger graphs due to initial overhead.
-
-Analysis and Observations
-The experiments show that as the number of vertices and edges increases, the execution time generally follows the O(V + E) complexity. While both algorithms are efficient, DFS showed faster execution times in these specific tests. This is likely due to the lower overhead of recursive calls compared to the management of a Queue object in BFS. The structure of the graph significantly impacts the traversal order; BFS visits nodes in layers, while DFS follows a single path to its end before switching.
+The system was tested using a weighted graph structure to verify the correctness of the shortest path calculations. For example, in a graph where multiple paths exist between two nodes, the algorithm correctly identifies the path with the minimum total weight rather than the path with the fewest number of edges.
+The results demonstrated that the algorithm successfully handles:
+Direct connections between nodes.
+Indirect paths where a combination of multiple edges results in a lower total weight.
+Disconnected nodes, which correctly remain at an infinite distance.
 
 Reflection
-Through this assignment, I gained a deeper understanding of how graph representations affect algorithm efficiency. Implementing both BFS and DFS highlighted the importance of choosing the right data structures for specific tasks. One of the primary challenges was obtaining consistent timing results, which was successfully resolved by implementing a warm-up routine to stabilize the JVM performance before recording final data.
-![](screenshots/1.png)
+Implementing a weighted graph provided significant insights into how data structures can be adapted to solve optimization problems. The main challenge was modifying the existing edge representation to incorporate weights and ensuring that the distance update logic correctly handled vertex lookups. This implementation demonstrates a fundamental understanding of network optimization and efficient pathfinding.
+![](7.png)
